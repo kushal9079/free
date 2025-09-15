@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solana Wallet Generator</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-wallet"></i> Solana Wallet Generator</h1>
+            <p class="subtitle">Generate Solana wallets with account management</p>
+        </header>
+        
+        <main>
+            <div class="generate-section">
+                <button class="generate-btn" id="generateBtn">
+                    <i class="fas fa-plus-circle"></i> Generate New Wallet
+                </button>
+                <p class="warning">
+                    <i class="fas fa-exclamation-triangle"></i> Warning: This is a demo. For real wallets, use Phantom or other trusted wallets.
+                </p>
+            </div>
+            
+            <div class="mnemonic-container" id="mnemonicContainer" style="display: none;">
+                <div class="mnemonic-header">
+                    <h3 class="mnemonic-title"><i class="fas fa-key"></i> Recovery Phrase</h3>
+                    <button class="toggle-mnemonic" id="toggleMnemonic">
+                        <i class="fas fa-eye"></i> Hide Phrase
+                    </button>
+                </div>
+                <div class="mnemonic-phrase" id="mnemonicPhrase"></div>
+                <p class="warning">
+                    <i class="fas fa-exclamation-circle"></i> Never share your recovery phrase! Anyone with these words can access your funds.
+                </p>
+            </div>
+            
+            <div class="progress" id="progressContainer" style="display: none;">
+                <div class="progress-text">Generating Account <span id="currentAccount">0</span>/8</div>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressFill"></div>
+                </div>
+                <button class="btn" id="nextAccountBtn">
+                    <i class="fas fa-arrow-right"></i> Next Account
+                </button>
+            </div>
+            
+            <div class="accounts-container" id="accountsContainer">
+                <h3 class="accounts-title"><i class="fas fa-list"></i> Derived Accounts</h3>
+                <div id="accountsList">
+                    <div class="empty-state">
+                        <i class="fas fa-wallet"></i>
+                        <p>No accounts generated yet. Click "Generate New Wallet" to get started.</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+        
+        <footer>
+            <p>This is a demonstration only. For real Solana transactions, use a secure wallet like Phantom.</p>
+        </footer>
+    </div>
+
+    <script src="index.js"></script>
+</body>
+</html>
